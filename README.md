@@ -4,22 +4,22 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=200&section=header&text=ceedeepee&fontSize=90&animation=twinkling&fontAlignY=35&desc=Building%20Cool%20Stuff%20One%20Commit%20at%20a%20Time&descAlignY=55" />
 </div>
 
-## 🚀 Quick Stats
+## 🚀 My Work Style
 
 <div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ceedeepee&theme=radical" />
+  
+### I commit code. That's it. That's the tweet.
+
+![Commit Machine](https://img.shields.io/badge/Work%20Style-Pure%20Commits-blueviolet?style=for-the-badge&logo=git&logoColor=white)
+![No PRs](https://img.shields.io/badge/Pull%20Requests-Why%20Bother-red?style=for-the-badge&logo=github&logoColor=white)
+![Direct Push](https://img.shields.io/badge/Deploy%20Strategy-YOLO%20to%20Main-yellow?style=for-the-badge&logo=rocket&logoColor=white)
+
 </div>
 
-## 📊 Code Metrics
+## 📊 Language Breakdown
 
 <div align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=ceedeepee&theme=radical" />
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=ceedeepee&theme=radical&utcOffset=0" />
-</div>
-
-<div align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=ceedeepee&theme=radical" />
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=ceedeepee&theme=radical" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ceedeepee&theme=radical&hide_border=true&layout=donut-vertical&langs_count=8" />
 </div>
 
 ## 🔥 Streak & Performance
