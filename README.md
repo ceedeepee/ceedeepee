@@ -22,19 +22,19 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ceedeepee&theme=radical&hide_border=true&layout=donut-vertical&langs_count=8" />
 </div>
 
-## 🔥 Streak & Performance
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ceedeepee&theme=radical&hide_border=true" />
-</div>
+## 🔥 Performance Metrics
 
 <div align="center">
   
-![Code Quality](https://img.shields.io/badge/Code%20Quality-A+-brightgreen?style=flat-square&logo=codacy)
-![Productivity](https://img.shields.io/badge/Productivity-High%20Performer-success?style=flat-square&logo=todoist)
-![Focus Time](https://img.shields.io/badge/Deep%20Work-8+%20hrs/day-blue?style=flat-square&logo=clockify)
-![Coffee Consumed](https://img.shields.io/badge/Coffee-∞%20cups-brown?style=flat-square&logo=buy-me-a-coffee)
+![Code Quality](https://img.shields.io/badge/Code%20Quality-A+-brightgreen?style=for-the-badge&logo=codacy)
+![Productivity](https://img.shields.io/badge/Productivity-High%20Performer-success?style=for-the-badge&logo=todoist)
+![Focus Time](https://img.shields.io/badge/Deep%20Work-8+%20hrs/day-blue?style=for-the-badge&logo=clockify)
+![Coffee Consumed](https://img.shields.io/badge/Coffee-∞%20cups-brown?style=for-the-badge&logo=buy-me-a-coffee)
 
+</div>
+
+<div align="center">
+  <img width="80%" src="https://github-readme-stats.vercel.app/api?username=ceedeepee&show_icons=true&theme=radical&hide_border=true&hide_title=true&hide=stars,issues&show=commits,prs,contribs&include_all_commits=true&count_private=true" />
 </div>
 
 ## 💪 Coding Power
