@@ -1,0 +1,162 @@
+name: Update Global Code Metrics
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  update-global-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Setup GitHub CLI
+      run: |
+        # GitHub CLI is pre-installed on GitHub Actions runners
+        gh auth setup-git
+    
+    - name: Calculate Global Code Metrics
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # Get current date info
+        CURRENT_DATE=$(date -u +"%Y-%m-%d")
+        
+        # Initialize counters
+        TOTAL_ADDED_24H=0
+        TOTAL_REMOVED_24H=0
+        TOTAL_COMMITS_24H=0
+        
+        TOTAL_ADDED_7D=0
+        TOTAL_REMOVED_7D=0
+        TOTAL_COMMITS_7D=0
+        
+        TOTAL_ADDED_30D=0
+        TOTAL_REMOVED_30D=0
+        TOTAL_COMMITS_30D=0
+        
+        TOTAL_ADDED_MONTH=0
+        TOTAL_REMOVED_MONTH=0
+        TOTAL_COMMITS_MONTH=0
+        
+        echo "📊 Fetching all repositories..."
+        
+        # Get all non-archived repositories for the user
+        REPOS=$(gh repo list ${{ github.repository_owner }} --limit 100 --json name,isArchived,isFork,isPrivate | jq -r '.[] | select(.isArchived == false) | .name')
+        
+        echo "Found repositories: $REPOS"
+        
+        # Process each repository
+        for repo in $REPOS; do
+          echo "Processing $repo..."
+          
+          # Clone repo in shallow mode for recent history
+          if git clone --quiet --filter=blob:none --depth=1000 "https://github.com/${{ github.repository_owner }}/$repo.git" temp_repo 2>/dev/null; then
+            cd temp_repo
+            
+            # Fetch more history if needed
+            git fetch --quiet --deepen=1000 2>/dev/null || true
+            
+            # Calculate stats for different periods (only for commits by the repo owner)
+            # Last 24 hours
+            STATS=$(git log --author="${{ github.repository_owner }}" --since="24 hours ago" --pretty=tformat: --numstat 2>/dev/null | awk '{added+=$1; removed+=$2} END {print added, removed}')
+            if [ -n "$STATS" ]; then
+              ADDED=$(echo $STATS | awk '{print $1}')
+              REMOVED=$(echo $STATS | awk '{print $2}')
+              COMMITS=$(git rev-list --count --author="${{ github.repository_owner }}" --since="24 hours ago" HEAD 2>/dev/null || echo 0)
+              
+              TOTAL_ADDED_24H=$((TOTAL_ADDED_24H + ${ADDED:-0}))
+              TOTAL_REMOVED_24H=$((TOTAL_REMOVED_24H + ${REMOVED:-0}))
+              TOTAL_COMMITS_24H=$((TOTAL_COMMITS_24H + ${COMMITS:-0}))
+            fi
+            
+            # Last 7 days
+            STATS=$(git log --author="${{ github.repository_owner }}" --since="7 days ago" --pretty=tformat: --numstat 2>/dev/null | awk '{added+=$1; removed+=$2} END {print added, removed}')
+            if [ -n "$STATS" ]; then
+              ADDED=$(echo $STATS | awk '{print $1}')
+              REMOVED=$(echo $STATS | awk '{print $2}')
+              COMMITS=$(git rev-list --count --author="${{ github.repository_owner }}" --since="7 days ago" HEAD 2>/dev/null || echo 0)
+              
+              TOTAL_ADDED_7D=$((TOTAL_ADDED_7D + ${ADDED:-0}))
+              TOTAL_REMOVED_7D=$((TOTAL_REMOVED_7D + ${REMOVED:-0}))
+              TOTAL_COMMITS_7D=$((TOTAL_COMMITS_7D + ${COMMITS:-0}))
+            fi
+            
+            # Last 30 days
+            STATS=$(git log --author="${{ github.repository_owner }}" --since="30 days ago" --pretty=tformat: --numstat 2>/dev/null | awk '{added+=$1; removed+=$2} END {print added, removed}')
+            if [ -n "$STATS" ]; then
+              ADDED=$(echo $STATS | awk '{print $1}')
+              REMOVED=$(echo $STATS | awk '{print $2}')
+              COMMITS=$(git rev-list --count --author="${{ github.repository_owner }}" --since="30 days ago" HEAD 2>/dev/null || echo 0)
+              
+              TOTAL_ADDED_30D=$((TOTAL_ADDED_30D + ${ADDED:-0}))
+              TOTAL_REMOVED_30D=$((TOTAL_REMOVED_30D + ${REMOVED:-0}))
+              TOTAL_COMMITS_30D=$((TOTAL_COMMITS_30D + ${COMMITS:-0}))
+            fi
+            
+            cd ..
+            rm -rf temp_repo
+          else
+            echo "⚠️ Could not access $repo"
+          fi
+        done
+        
+        # Format the results
+        STATS_24H="+${TOTAL_ADDED_24H}/-${TOTAL_REMOVED_24H}"
+        STATS_7D="+${TOTAL_ADDED_7D}/-${TOTAL_REMOVED_7D}"
+        STATS_30D="+${TOTAL_ADDED_30D}/-${TOTAL_REMOVED_30D}"
+        
+        # Create updated metrics section
+        cat > global-code-metrics.md << EOF
+        <!-- START_SECTION:global_code_metrics -->
+        ## 📊 Global Code Metrics (All Repositories)
+        
+        | Period | Lines Added/Removed | Commits | Repos Active |
+        |--------|-------------------|---------|--------------|
+        | Last 24 hours | \`$STATS_24H\` | $TOTAL_COMMITS_24H | - |
+        | Last 7 days | \`$STATS_7D\` | $TOTAL_COMMITS_7D | - |
+        | Last 30 days | \`$STATS_30D\` | $TOTAL_COMMITS_30D | - |
+        
+        *Last updated: $CURRENT_DATE (across all public repos)*
+        <!-- END_SECTION:global_code_metrics -->
+        EOF
+        
+        echo "✅ Global metrics calculated successfully"
+        
+    - name: Update README with global metrics
+      run: |
+        # Check if the global metrics section exists in README
+        if grep -q "<!-- START_SECTION:global_code_metrics -->" README.md; then
+          # Replace existing section
+          awk '/<!-- START_SECTION:global_code_metrics -->/{exit} 1' README.md > temp.md
+          cat global-code-metrics.md >> temp.md
+          awk '/<!-- END_SECTION:global_code_metrics -->/{f=1} f' README.md | tail -n +2 >> temp.md
+          mv temp.md README.md
+        else
+          # Add it after the regular metrics section
+          awk '/<!-- END_SECTION:code_metrics -->/{print; print ""; system("cat global-code-metrics.md"); next} 1' README.md > temp.md
+          mv temp.md README.md
+        fi
+        
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Check if there are changes
+        if [[ -n $(git status -s) ]]; then
+          git add README.md
+          git commit -m "📊 Update global code metrics [skip ci]"
+          git push
+          echo "✅ Global metrics updated and pushed"
+        else
+          echo "ℹ️ No changes to commit"
+        fi

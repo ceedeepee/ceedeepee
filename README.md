@@ -42,7 +42,7 @@
 </div>
 
 <!-- START_SECTION:code_metrics -->
-## 📊 Lines of Code Changed
+## 📊 Lines of Code Changed (This Repository)
 
 | Period | Lines Added/Removed | Commits |
 |--------|-------------------|---------|
@@ -53,6 +53,18 @@
 
 *Last updated: 2025-06-18 (manually calculated)*
 <!-- END_SECTION:code_metrics -->
+
+<!-- START_SECTION:global_code_metrics -->
+## 📊 Global Code Metrics (All Repositories)
+
+| Period | Lines Added/Removed | Commits | Repos Active |
+|--------|-------------------|---------|--------------|
+| Last 24 hours | `+0/-0` | 0 | - |
+| Last 7 days | `+0/-0` | 0 | - |
+| Last 30 days | `+0/-0` | 0 | - |
+
+*Last updated: Not yet run (across all public repos)*
+<!-- END_SECTION:global_code_metrics -->
 
 ## 🎯 Current Focus
 
