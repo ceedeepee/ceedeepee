@@ -33,10 +33,6 @@
 
 </div>
 
-<div align="center">
-  <img width="80%" src="https://github-readme-stats.vercel.app/api?username=ceedeepee&show_icons=true&theme=radical&hide_border=true&hide_title=true&hide=stars,issues&show=commits,prs,contribs&include_all_commits=true&count_private=true" />
-</div>
-
 ## 💪 Coding Power
 
 <div align="center">
