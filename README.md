@@ -32,7 +32,7 @@
 ## 📈 Contribution Graph
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ceedeepee&theme=react-dark&hide_border=true&area=true" />
+  <img src="https://github-readme-activity-graph.cyclic.app/graph?username=ceedeepee&theme=react-dark&hide_border=true&area=true" />
 </div>
 
 ## 🏆 GitHub Trophies
@@ -75,11 +75,6 @@ looking_to_collaborate: ["AI/ML Projects", "Developer Tools"]
 ask_me_about: ["Python", "JavaScript", "DevOps", "Open Source"]
 ```
 
-## 📊 Commit Activity
-
-<div align="center">
-  <img src="https://activity-graph.herokuapp.com/graph?username=ceedeepee&theme=react-dark&area=true&hide_border=true&custom_title=Contribution%20Graph" alt="Contribution Graph" />
-</div>
 
 ## 💻 Tech Stack
 
