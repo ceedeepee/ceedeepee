@@ -1,33 +1,85 @@
 # Hi there, I'm ceedeepee! 👋
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Welcome%20to%20my%20GitHub%20Profile&fontSize=50&animation=fadeIn&fontAlignY=38&desc=Developer%20|%20Open%20Source%20Enthusiast&descAlignY=51&descAlign=62" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=200&section=header&text=ceedeepee&fontSize=90&animation=twinkling&fontAlignY=35&desc=Building%20Cool%20Stuff%20One%20Commit%20at%20a%20Time&descAlignY=55" />
 </div>
 
-## 📊 GitHub Stats
+## 🚀 Quick Stats
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=ceedeepee&show_icons=true&theme=radical&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ceedeepee&layout=compact&langs_count=8&theme=radical"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ceedeepee&theme=radical" />
 </div>
 
-## 🔥 Streak Stats
+## 📊 Code Metrics
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ceedeepee&theme=radical" alt="ceedeepee's streak"/>
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=ceedeepee&theme=radical" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=ceedeepee&theme=radical&utcOffset=0" />
 </div>
 
-## 🏆 GitHub Trophies
+<div align="center">
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=ceedeepee&theme=radical" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=ceedeepee&theme=radical" />
+</div>
+
+## 🔥 Streak & Activity
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=ceedeepee&theme=radical&row=1&column=7&margin-w=15&margin-h=15" alt="ceedeepee's trophies"/>
+  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=ceedeepee&theme=radical&hide_border=true" />
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ceedeepee&theme=radical&hide_border=true&layout=compact&langs_count=10" />
 </div>
 
 ## 📈 Contribution Graph
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ceedeepee&theme=redical&hide_border=true" alt="ceedeepee's activity graph"/>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ceedeepee&theme=react-dark&hide_border=true&area=true" />
 </div>
+
+## 🏆 GitHub Trophies
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=ceedeepee&theme=radical&no-frame=true&row=1&column=7&margin-w=15&margin-h=15" />
+</div>
+
+## 💻 WakaTime Stats
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=ceedeepee&theme=radical&hide_border=true" />
+</div>
+
+## 🎯 Current Focus
+
+```yaml
+currently_learning: ["Rust", "WebAssembly", "Kubernetes"]
+working_on: ["Open Source Projects", "System Design"]
+looking_to_collaborate: ["AI/ML Projects", "Developer Tools"]
+ask_me_about: ["Python", "JavaScript", "DevOps", "Open Source"]
+```
+
+## 📊 Detailed Analytics
+
+<details>
+<summary>📈 Recent Activity Metrics</summary>
+<br>
+<div align="center">
+  
+<!--START_SECTION:waka-->
+```text
+No Activity Tracked This Week
+```
+<!--END_SECTION:waka-->
+
+</div>
+</details>
+
+<details>
+<summary>⚡ GitHub Recent Activity</summary>
+<br>
+
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
+
+</details>
 
 ## 💻 Tech Stack
 
