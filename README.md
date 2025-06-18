@@ -41,10 +41,16 @@
   <img src="https://github-profile-trophy.vercel.app/?username=ceedeepee&theme=radical&no-frame=true&row=1&column=7&margin-w=15&margin-h=15" />
 </div>
 
-## 💻 WakaTime Stats
+## 📊 Lines of Code Changed
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=ceedeepee&theme=radical&hide_border=true" />
+  <img src="https://github-readme-stats.vercel.app/api?username=ceedeepee&show_icons=true&theme=radical&hide_border=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&hide=stars&include_all_commits=true&count_private=true&hide_title=true" />
+</div>
+
+<div align="center">
+  <a href="https://github.com/ceedeepee">
+    <img src="https://github-stats-alpha.vercel.app/api?username=ceedeepee&cc=22272e&tc=37BCF6&ic=fff&bc=fff" />
+  </a>
 </div>
 
 ## 🎯 Current Focus
@@ -56,30 +62,11 @@ looking_to_collaborate: ["AI/ML Projects", "Developer Tools"]
 ask_me_about: ["Python", "JavaScript", "DevOps", "Open Source"]
 ```
 
-## 📊 Detailed Analytics
+## 📊 Commit Activity
 
-<details>
-<summary>📈 Recent Activity Metrics</summary>
-<br>
 <div align="center">
-  
-<!--START_SECTION:waka-->
-```text
-No Activity Tracked This Week
-```
-<!--END_SECTION:waka-->
-
+  <img src="https://activity-graph.herokuapp.com/graph?username=ceedeepee&theme=react-dark&area=true&hide_border=true&custom_title=Contribution%20Graph" alt="Contribution Graph" />
 </div>
-</details>
-
-<details>
-<summary>⚡ GitHub Recent Activity</summary>
-<br>
-
-<!--START_SECTION:activity-->
-<!--END_SECTION:activity-->
-
-</details>
 
 ## 💻 Tech Stack
 
