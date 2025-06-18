@@ -46,14 +46,10 @@
 ![Lines Removed](https://img.shields.io/badge/Lines%20Removed-100+-orange?style=for-the-badge&logo=github&logoColor=white)
 ![Profile Built](https://img.shields.io/badge/Profile-100%25%20Custom%20Built-blueviolet?style=for-the-badge&logo=github&logoColor=white)
 
+**📅 Tracking since: June 18, 2025**
+
 </div>
 
-## 📊 Language Mastery
-
-<div align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ceedeepee&theme=radical&hide_border=true&layout=compact&langs_count=10&hide_title=true" />
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=ceedeepee&theme=radical" />
-</div>
 
 ## 🏆 GitHub Trophies
 
