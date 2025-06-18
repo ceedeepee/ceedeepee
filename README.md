@@ -29,10 +29,15 @@
   <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ceedeepee&theme=radical&hide_border=true&layout=compact&langs_count=10" />
 </div>
 
-## 📈 Contribution Graph
+## 📈 Coding Activity
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.cyclic.app/graph?username=ceedeepee&theme=react-dark&hide_border=true&area=true" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ceedeepee&theme=radical" />
+</div>
+
+<div align="center">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=ceedeepee&theme=radical&hide_border=true&include_all_commits=true&count_private=true&show=total_contributions,prs_merged_percentage&hide=stars&hide_title=true&disable_animations=true" />
+  <img width="49%" src="https://github-contributor-stats.vercel.app/api?username=ceedeepee&limit=5&theme=radical&combine_all_yearly_contributions=true&hide_border=true" />
 </div>
 
 ## 🏆 GitHub Trophies
