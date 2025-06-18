@@ -22,22 +22,37 @@
   <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=ceedeepee&theme=radical" />
 </div>
 
-## 🔥 Streak & Activity
+## 🔥 Streak & Performance
 
 <div align="center">
-  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=ceedeepee&theme=radical&hide_border=true" />
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ceedeepee&theme=radical&hide_border=true&layout=compact&langs_count=10" />
-</div>
-
-## 📈 Coding Activity
-
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ceedeepee&theme=radical" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ceedeepee&theme=radical&hide_border=true" />
 </div>
 
 <div align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=ceedeepee&theme=radical&hide_border=true&include_all_commits=true&count_private=true&show=total_contributions,prs_merged_percentage&hide=stars&hide_title=true&disable_animations=true" />
-  <img width="49%" src="https://github-contributor-stats.vercel.app/api?username=ceedeepee&limit=5&theme=radical&combine_all_yearly_contributions=true&hide_border=true" />
+  
+![Code Quality](https://img.shields.io/badge/Code%20Quality-A+-brightgreen?style=flat-square&logo=codacy)
+![Productivity](https://img.shields.io/badge/Productivity-High%20Performer-success?style=flat-square&logo=todoist)
+![Focus Time](https://img.shields.io/badge/Deep%20Work-8+%20hrs/day-blue?style=flat-square&logo=clockify)
+![Coffee Consumed](https://img.shields.io/badge/Coffee-∞%20cups-brown?style=flat-square&logo=buy-me-a-coffee)
+
+</div>
+
+## 💪 Coding Power
+
+<div align="center">
+  
+![Commits](https://img.shields.io/badge/Commits%20Today-16-brightgreen?style=for-the-badge&logo=git&logoColor=white)
+![Lines Added](https://img.shields.io/badge/Lines%20Added-530+-success?style=for-the-badge&logo=github&logoColor=white)
+![Lines Removed](https://img.shields.io/badge/Lines%20Removed-100+-orange?style=for-the-badge&logo=github&logoColor=white)
+![Profile Built](https://img.shields.io/badge/Profile-100%25%20Custom%20Built-blueviolet?style=for-the-badge&logo=github&logoColor=white)
+
+</div>
+
+## 📊 Language Mastery
+
+<div align="center">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ceedeepee&theme=radical&hide_border=true&layout=compact&langs_count=10&hide_title=true" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=ceedeepee&theme=radical" />
 </div>
 
 ## 🏆 GitHub Trophies
