@@ -41,30 +41,6 @@
   <img src="https://github-profile-trophy.vercel.app/?username=ceedeepee&theme=radical&no-frame=true&row=1&column=7&margin-w=15&margin-h=15" />
 </div>
 
-<!-- START_SECTION:code_metrics -->
-## 📊 Lines of Code Changed
-
-| Period | Lines Added/Removed | Commits |
-|--------|-------------------|---------|
-| Last 24 hours | `+514/-78` | 13 |
-| Last 7 days | `+514/-78` | 13 |
-| Last 30 days | `+514/-78` | 13 |
-| This month | `+514/-78` | - |
-
-*Last updated: 2025-06-18*
-<!-- END_SECTION:code_metrics -->
-
-<!-- START_SECTION:global_code_metrics -->
-## 📊 Global Code Metrics (All Repositories)
-
-| Period | Lines Added/Removed | Commits | Repos Active |
-|--------|-------------------|---------|--------------|
-| Last 24 hours | `+0/-0` | 0 | - |
-| Last 7 days | `+0/-0` | 0 | - |
-| Last 30 days | `+0/-0` | 0 | - |
-
-*Last updated: Not yet run (across all public repos)*
-<!-- END_SECTION:global_code_metrics -->
 
 ## 🎯 Current Focus
 
