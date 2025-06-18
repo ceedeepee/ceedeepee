@@ -41,17 +41,18 @@
   <img src="https://github-profile-trophy.vercel.app/?username=ceedeepee&theme=radical&no-frame=true&row=1&column=7&margin-w=15&margin-h=15" />
 </div>
 
+<!-- START_SECTION:code_metrics -->
 ## 📊 Lines of Code Changed
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ceedeepee&show_icons=true&theme=radical&hide_border=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&hide=stars&include_all_commits=true&count_private=true&hide_title=true" />
-</div>
+| Period | Lines Added/Removed | Commits |
+|--------|-------------------|---------|
+| Last 24 hours | `+0/-0` | 0 |
+| Last 7 days | `+0/-0` | 0 |
+| Last 30 days | `+0/-0` | 0 |
+| This month | `+0/-0` | - |
 
-<div align="center">
-  <a href="https://github.com/ceedeepee">
-    <img src="https://github-stats-alpha.vercel.app/api?username=ceedeepee&cc=22272e&tc=37BCF6&ic=fff&bc=fff" />
-  </a>
-</div>
+*Last updated: Not yet run*
+<!-- END_SECTION:code_metrics -->
 
 ## 🎯 Current Focus
 

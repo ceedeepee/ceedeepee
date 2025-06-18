@@ -1,0 +1,112 @@
+name: Update Code Metrics
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  update-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch all history for accurate stats
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Calculate Code Metrics
+      id: metrics
+      run: |
+        # Get current date info
+        CURRENT_DATE=$(date -u +"%Y-%m-%d")
+        CURRENT_WEEK=$(date -u +"%Y-W%V")
+        CURRENT_MONTH=$(date -u +"%Y-%m")
+        
+        # Calculate metrics for different time periods
+        echo "📊 Calculating code metrics..."
+        
+        # Last 24 hours
+        STATS_24H=$(git log --since="24 hours ago" --pretty=tformat: --numstat | awk '{added+=$1; removed+=$2} END {printf "+%d/-%d", added, removed}')
+        
+        # Last 7 days
+        STATS_7D=$(git log --since="7 days ago" --pretty=tformat: --numstat | awk '{added+=$1; removed+=$2} END {printf "+%d/-%d", added, removed}')
+        
+        # Last 30 days
+        STATS_30D=$(git log --since="30 days ago" --pretty=tformat: --numstat | awk '{added+=$1; removed+=$2} END {printf "+%d/-%d", added, removed}')
+        
+        # This month
+        STATS_MONTH=$(git log --since="$CURRENT_MONTH-01" --pretty=tformat: --numstat | awk '{added+=$1; removed+=$2} END {printf "+%d/-%d", added, removed}')
+        
+        # Total commits in different periods
+        COMMITS_24H=$(git rev-list --count --since="24 hours ago" HEAD)
+        COMMITS_7D=$(git rev-list --count --since="7 days ago" HEAD)
+        COMMITS_30D=$(git rev-list --count --since="30 days ago" HEAD)
+        
+        # Create metrics JSON
+        cat > metrics.json << EOF
+        {
+          "last_updated": "$CURRENT_DATE",
+          "lines_changed": {
+            "last_24_hours": "$STATS_24H",
+            "last_7_days": "$STATS_7D",
+            "last_30_days": "$STATS_30D",
+            "this_month": "$STATS_MONTH"
+          },
+          "commits": {
+            "last_24_hours": $COMMITS_24H,
+            "last_7_days": $COMMITS_7D,
+            "last_30_days": $COMMITS_30D
+          }
+        }
+        EOF
+        
+        # Also create a markdown snippet
+        cat > code-metrics.md << EOF
+        <!-- START_SECTION:code_metrics -->
+        ## 📊 Lines of Code Changed
+        
+        | Period | Lines Added/Removed | Commits |
+        |--------|-------------------|---------|
+        | Last 24 hours | \`$STATS_24H\` | $COMMITS_24H |
+        | Last 7 days | \`$STATS_7D\` | $COMMITS_7D |
+        | Last 30 days | \`$STATS_30D\` | $COMMITS_30D |
+        | This month | \`$STATS_MONTH\` | - |
+        
+        *Last updated: $CURRENT_DATE*
+        <!-- END_SECTION:code_metrics -->
+        EOF
+        
+        echo "✅ Metrics calculated successfully"
+        
+    - name: Update README with metrics
+      run: |
+        # Check if the metrics section exists in README
+        if grep -q "<!-- START_SECTION:code_metrics -->" README.md; then
+          # Replace existing section
+          awk '/<!-- START_SECTION:code_metrics -->/{exit} 1' README.md > temp.md
+          cat code-metrics.md >> temp.md
+          awk '/<!-- END_SECTION:code_metrics -->/{f=1} f' README.md | tail -n +2 >> temp.md
+          mv temp.md README.md
+        else
+          echo "⚠️ Metrics section not found in README. Please add <!-- START_SECTION:code_metrics --> and <!-- END_SECTION:code_metrics --> markers."
+        fi
+        
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Check if there are changes
+        if [[ -n $(git status -s) ]]; then
+          git add metrics.json code-metrics.md README.md
+          git commit -m "📊 Update code metrics [skip ci]"
+          git push
+          echo "✅ Metrics updated and pushed"
+        else
+          echo "ℹ️ No changes to commit"
+        fi
